@@ -1,0 +1,10 @@
+2025-08-24 11:42:56.708 | INFO     | __main__:debate:230 - Starting debate on: Talk about how the U.S. should respond to climate change
+2025-08-24 11:42:56.710 | INFO     | __main__:debate:234 - 
+=== Research Phase ===
+2025-08-24 11:42:56.711 | INFO     | __main__:debate:236 - Principal requesting research...
+2025-08-24 11:42:57.809 | DEBUG    | metagpt.provider.base_llm:aask:205 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n    ## BACKGROUND\n    You are Principal, a School preparing for a debate on: Talk about how the U.S. should respond to climate change\n    \n    ## TASK\n    What specific aspect of this topic would you like to research to strengthen your position?\n    Provide ONE specific research query (1-2 sentences) that would help you in this debate.\n    Focus on facts, statistics, examples, or evidence that would support your School perspective.\n    '}]
+2025-08-24 11:45:51.017 | INFO     | __main__:debate:230 - Starting debate on: Talk about how the U.S. should respond to climate change
+2025-08-24 11:45:51.018 | INFO     | __main__:debate:234 - 
+=== Research Phase ===
+2025-08-24 11:45:51.019 | INFO     | __main__:debate:236 - Principal requesting research...
+2025-08-24 11:45:52.101 | DEBUG    | metagpt.provider.base_llm:aask:205 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n    ## BACKGROUND\n    You are Principal, a School preparing for a debate on: Talk about how the U.S. should respond to climate change\n    \n    ## TASK\n    What specific aspect of this topic would you like to research to strengthen your position?\n    Provide ONE specific research query (1-2 sentences) that would help you in this debate.\n    Focus on facts, statistics, examples, or evidence that would support your School perspective.\n    '}]
