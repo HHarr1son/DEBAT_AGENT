@@ -1,6 +1,18 @@
-# Minimal dependencies for Streamlit Cloud
+# For full MetaGPT version (debate.py)
 streamlit==1.28.0
 openai==0.28.0
+pyyaml==6.0.1
 aiohttp==3.8.6
 beautifulsoup4==4.12.2
+requests==2.31.0
 duckduckgo-search==3.8.5
+
+# MetaGPT core dependencies - using versions with binary wheels
+pydantic==2.4.2
+tenacity==8.2.3
+loguru==0.7.2
+jinja2==3.1.2
+typing-extensions==4.8.0
+
+# Avoid tiktoken (needs Rust), use alternative
+# tiktoken is optional for MetaGPT
