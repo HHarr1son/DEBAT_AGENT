@@ -1,20 +1,22 @@
-# Core dependencies
+# Core - use versions with pre-built wheels
 streamlit==1.28.0
 pyyaml==6.0.1
 
-# LLM & API
-openai==1.3.0
+# LLM & API - older version to avoid Rust compilation
+openai==0.28.0
 
-# Web scraping & search
-aiohttp==3.8.5
+# Web scraping - avoid compilation
+aiohttp
 beautifulsoup4==4.12.2
-lxml==4.9.3
-duckduckgo-search==3.9.6
+lxml-stubs
 requests==2.31.0
+httpx==0.24.1
 
-# MetaGPT dependencies
-pydantic==2.5.0
+# Search - simplified
+duckduckgo-search==3.8.5
+
+# MetaGPT core dependencies - compatible with Python 3.10
+pydantic==1.10.13
 tenacity==8.2.3
 loguru==0.7.2
 jinja2==3.1.2
-tiktoken==0.5.2
