@@ -1,23 +1,6 @@
-# Core
+# Minimal dependencies for Streamlit Cloud
 streamlit==1.28.0
-pyyaml==6.0.1
-
-# LLM & API
 openai==0.28.0
-
-# Web scraping
 aiohttp==3.8.6
 beautifulsoup4==4.12.2
-requests==2.31.0
-httpx==0.24.1
-
-# Search
 duckduckgo-search==3.8.5
-
-# MetaGPT dependencies - pydantic v2 with binary wheels for Python 3.10
-pydantic==2.4.2
-pydantic-core==2.10.1
-tenacity==8.2.3
-loguru==0.7.2
-jinja2==3.1.2
-typing-extensions==4.8.0
