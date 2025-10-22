@@ -13,29 +13,36 @@ from duckduckgo_search import DDGS
 import aiohttp
 from bs4 import BeautifulSoup
 
+# ===== MUST BE FIRST - Before any st commands =====
+st.set_page_config(page_title="AI Debate Platform", page_icon="🗣️", layout="wide")
+
 # ===== Configuration =====
-if hasattr(st, 'secrets') and len(st.secrets) > 0 and "OPENAI_API_KEY" in st.secrets:
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
-    st.sidebar.success("✅ Using Streamlit Cloud Secrets")
-elif os.getenv("OPENAI_API_KEY"):
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-    st.sidebar.info("🔧 Using environment variable")
-else:
-    st.error("⚠️ **API Key Missing**")
-    st.markdown("""
-    Configure your OpenAI API key:
+def configure_api():
+    """Configure API key"""
+    if hasattr(st, 'secrets') and len(st.secrets) > 0 and "OPENAI_API_KEY" in st.secrets:
+        openai.api_key = st.secrets["OPENAI_API_KEY"]
+        st.sidebar.success("✅ Using Streamlit Cloud Secrets")
+        return True
+    elif os.getenv("OPENAI_API_KEY"):
+        openai.api_key = os.getenv("OPENAI_API_KEY")
+        st.sidebar.info("🔧 Using environment variable")
+        return True
+    else:
+        st.error("⚠️ **API Key Missing**")
+        st.markdown("""
+        Configure your OpenAI API key:
 
-    **Streamlit Cloud**: Add to App Settings → Secrets:
-    ```toml
-    OPENAI_API_KEY = "sk-..."
-    ```
+        **Streamlit Cloud**: Add to App Settings → Secrets:
+        ```toml
+        OPENAI_API_KEY = "sk-..."
+        ```
 
-    **Local**: Set environment variable:
-    ```bash
-    export OPENAI_API_KEY="sk-..."
-    ```
-    """)
-    st.stop()
+        **Local**: Set environment variable:
+        ```bash
+        export OPENAI_API_KEY="sk-..."
+        ```
+        """)
+        return False
 
 
 # ===== Helper Functions =====
@@ -231,7 +238,9 @@ async def run_debate(topic: str, n_rounds: int = 6):
 
 
 # ===== Streamlit UI =====
-st.set_page_config(page_title="AI Debate Platform", page_icon="🗣️", layout="wide")
+# Configure API (this will show error if needed)
+if not configure_api():
+    st.stop()
 
 st.title("🗣️ AI Debate Platform")
 st.markdown("Enter a debate topic and watch AI agents discuss different perspectives!")
